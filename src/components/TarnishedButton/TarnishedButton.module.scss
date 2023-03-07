@@ -1,0 +1,33 @@
+.TarnishedButton {
+  cursor: pointer;
+  font-size: 18px;
+  font-family: serif;
+  background-color: #1E1C18;
+  padding: 5px 70px;
+  border: 1px solid #B1B0A9;
+  color: #B1B0A9;
+
+  &:hover {
+    background: linear-gradient(270deg, #6a6c5f, transparent, #6a6c5f);
+    background-size: 600% 600%;
+    animation: Breath 5s ease infinite;
+  }
+
+  &.disabled {
+    border: 1px solid #B1B0A990;
+    color: #B1B0A990;
+  }
+}
+
+
+@keyframes Breath {
+  0% {
+    background-position: 0 50%
+  }
+  50% {
+    background-position: 100% 50%
+  }
+  100% {
+    background-position: 0 50%
+  }
+}
