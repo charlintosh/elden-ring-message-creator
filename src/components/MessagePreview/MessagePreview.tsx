@@ -13,7 +13,7 @@ const MessagePreview: FC<MessagePreviewProps> = ({ message, onClose, onDownload 
     <p>
       {message}
     </p>
-    <div className={styles.MessagePreview_actions}>
+    <div className={styles.MessagePreview_actions} data-html2canvas-ignore="true">
       <TarnishedButton onClick={onDownload}> Descargar </TarnishedButton>
       <TarnishedButton onClick={onClose}> Cerrar </TarnishedButton>
     </div>

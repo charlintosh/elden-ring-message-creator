@@ -15,6 +15,14 @@ function App() {
     const element = document.getElementById('MessagePreview');
     if (!element) return;
 
+    // Find and hide the actions div
+    const actionsDiv = element.querySelector('[data-html2canvas-ignore]') as HTMLElement;
+    const originalDisplay = actionsDiv ? actionsDiv.style.display : '';
+    
+    if (actionsDiv) {
+      actionsDiv.style.display = 'none';
+    }
+
     try {
       const canvas = await html2canvas(element);
 
@@ -24,6 +32,11 @@ function App() {
       link.click();
     } catch (error) {
       console.error('Error downloading image:', error);
+    } finally {
+      // Restore the actions div
+      if (actionsDiv) {
+        actionsDiv.style.display = originalDisplay;
+      }
     }
   };
 
